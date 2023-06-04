@@ -1,0 +1,46 @@
+/* body {
+    background-color: rgba(0, 179, 255, 0.192);
+} */
+
+.edit {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    margin-top: 20px;
+    flex-direction: column;
+    margin: 15vw;
+    gap: 25px;
+}
+
+.profilePicture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid #000000;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.error {
+    text-align: center;
+    background-color: green;
+    color: white;
+    border-radius: 15px;
+    padding: 1px;
+    margin-top: 15px;
+}
+
+.shoppingcart {
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.cartje {
+    flex-direction: flex-end;
+}

@@ -5,15 +5,19 @@
 @endsection
 
 @section('content')
-  <h1>Welkom bij de Belgische Vereninging van Parkieten- en Papegaaienliefhebbers vzw</h1>
-    @if (Auth::guest())
-        <p>Welcome!</p>
-    @else
-        <p>Welcome, {{ Auth::user()->name }}!</p>
-    @endif
+    <div class="hero">
+        <h1>Welkom bij de Belgische Vereninging van Parkieten- en Papegaaienliefhebbers vzw</h1>
+        
+        <div class="welcome-message">
+            @if (Auth::guest())
+            <p>Welcome!</p>
+            @else
+            <p>Welcome, {{ Auth::user()->name }}!</p>
+            @endif
+        </div>
 
-  <a href="{{route('order.index')}}">Bestel hier je ringen!</a>
-  <a href="{{route('profile.orders')}}">Uw bestellingen</a>
+    </div>
+  
 @endsection
 
 @section('scripts')

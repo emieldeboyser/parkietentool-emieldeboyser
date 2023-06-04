@@ -44,3 +44,19 @@
 .cartje {
     flex-direction: flex-end;
 }
+
+.hero h1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.welcome-message p {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
+    margin-top: 50px;
+}

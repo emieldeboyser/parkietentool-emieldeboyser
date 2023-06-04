@@ -18,8 +18,13 @@
           </tr>
         </thead>
         @foreach ($orders as $order)
-        <tbody>
+        <tbody>                  
           <tr>
+            <td>
+                <a href="{{ route('profile.show', ['reference' => $order->reference]) }}">
+                                        # {{ $order->reference }}
+                                    </a>
+            </td>
             <td># {{$order->reference}}</td>
             <td>{{$order->created_at}}</td>
             <td>€{{$order->total_price}}</td>

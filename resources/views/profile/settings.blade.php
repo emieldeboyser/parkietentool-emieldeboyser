@@ -20,8 +20,9 @@
       <form action="/profile/settings" method="POST" enctype="multipart/form-data" class="edit">
         @csrf
 
-        <label for="name">Verander je naam:</label>
+        <label for="name">Verander je voornaam:</label>
         <input type="text" name="firstname" id="firstname" value="{{$user->firstname}}">
+        <label for="name">Verander je achternaam:</label>
         <input type="text" name="lastname" id="lastname" value="{{$user->lastname}}">
 
         <label for="stamnr">Verander je stamnummer:</label>

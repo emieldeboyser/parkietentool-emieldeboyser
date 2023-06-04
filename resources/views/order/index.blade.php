@@ -44,7 +44,7 @@
                   </div>
                 </div>
               </div>
-              <p class="hidden error">Toegevoegd aan winkelmand!</p>
+              {{-- <p class="hidden error">Toegevoegd aan winkelmand!</p> --}}
             </div>
             
             @endforeach
@@ -69,7 +69,7 @@
                   </div>
                 </div>
               </div>
-              <p class="hidden error">Toegevoegd aan winkelmand!</p>
+              {{-- <p class="hidden error">Toegevoegd aan winkelmand!</p> --}}
             </div>
             
             @endforeach

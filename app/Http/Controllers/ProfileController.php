@@ -7,6 +7,7 @@ use App\Models\User; // Replace "User" with your actual user model
 use Illuminate\Support\Facades\Storage;
 use App\Models\Order;
 use App\Models\OrderItem;
+use App\Models\Ring;
 use App\Models\Subscription;
 use Illuminate\Support\Facades\Auth;
 use DateTime;
@@ -88,6 +89,54 @@ class ProfileController extends Controller
         }
     }
 
+    public function show($reference)
+    {
+        // Retrieve the order based on the reference
+        $order = Order::where('reference', $reference)->first();
+
+        // Retrieve the order items based on the order reference
+        $orderItems = OrderItem::where('order_id', $reference)->get();
+
+        // Get the Name of the user
+        $user_id = $order->user_id;
+        $user = User::where('id', $user_id)->first();
+        $user_Name = $user->name;
+        $stamnummer = $user->stamnr;
+
+        if (!$order) {
+            // Handle the case where the order is not found
+            abort(404);
+        }
+
+        // Get the ring codes for each order item
+        $ringCodes = $orderItems->map(function ($item) {
+            $unserializedRingIds = unserialize($item->ring_id);
+            $ringIds = explode(',', $unserializedRingIds);
+            return $ringIds;
+        })->flatten();
+
+        // Get the ring data based on the ring codes
+        $ring = [];
+        foreach ($ringCodes as $ringCode) {
+            $ring[] = Ring::where('id', $ringCode)->first();
+        }
+
+        $amountArr = $orderItems->map(function ($item) {
+            $unserializedAmounts = unserialize($item->amounts);
+            $amountId = explode(',', $unserializedAmounts);
+            return $amountId;
+        })->flatten();
+
+
+        $amount = [];
+
+
+
+
+        // Pass the data to the view
+        return view('profile.show', compact('order', 'user_id', 'user_Name', 'stamnummer', 'orderItems', 'ringCodes', 'ring', 'amountArr', 'amount'));
+    }
+
     public function lidgeld()
     {
         if (auth()->check()) {
@@ -105,7 +154,7 @@ class ProfileController extends Controller
                 // get webhook url
                 $webhookUrl = route('webhooks.mollie.subscription');
                 if (App::environment('local')) {
-                    $webhookUrl = 'https://83ca-78-22-120-25.ngrok-free.app/webhooks/subscription';
+                    $webhookUrl = 'https://0f92-178-51-101-70.ngrok-free.app/webhooks/subscription';
                 }
 
                 // price of subscription

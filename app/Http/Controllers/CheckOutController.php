@@ -138,7 +138,7 @@ class CheckOutController extends Controller
             $order->save();
 
             $webhookUrl = App::environment('local')
-                ? 'https://87f2-78-22-120-25.ngrok-free.app/webhooks/mollie'
+                ? 'https://0f92-178-51-101-70.ngrok-free.app/webhooks/mollie'
                 : route('webhooks.mollie');
 
             Log::alert('CheckoutController');

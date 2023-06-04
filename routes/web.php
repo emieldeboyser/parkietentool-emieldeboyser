@@ -42,6 +42,8 @@ Route::get('/order', [OrderController::class, 'index'])->name('order.index');
 Route::get('/profile', [UserController::class, 'index'])->name('profile.index');
 Route::get('/profile/settings', [ProfileController::class, 'settings'])->name('profile.settings');
 Route::get('/profile/orders', [ProfileController::class, 'orders'])->name('profile.orders');
+Route::get('/profile/orders/{reference}', [ProfileController::class, 'show'])->name('profile.show');
+
 Route::post('/profile/settings', [ProfileController::class, 'update']);
 Route::post('/profile/settings/picture', [ProfileController::class, 'updatePicture']);
 Route::get('/profile/lidgeld', [ProfileController::class, 'lidgeld'])->name('profile.lidgeld');

@@ -14,7 +14,7 @@
               <i class="fas fa-shopping-cart fa-stack-1x"></i>
               {{-- <span class="fa-stack-1x cart-badge">3</span> --}}
             </span>
-            <span class="cart-text">Your Cart</span>
+            <span class="cart-text pull-right">Your Cart</span>
           </a>
         </div>
       </div>
@@ -40,7 +40,7 @@
                     <input type="number" class="form-control" id="product1-amount" name="{{$ringVerhard->id}}" min="10">
                   </div>
                   <div class="shoppingcart">
-                    <button type="submit" name="button_id" value="{{$ringVerhard->id}}"><i class="fa-solid fa-cart-shopping addToCart"></i></button>
+                    <button type="submit" name="button_id" value="{{$ringVerhard->id}}" class="btn btn-secondary"><i class="fa-solid fa-cart-shopping addToCart"></i></button>
                   </div>
                 </div>
               </div>
@@ -65,7 +65,7 @@
                     <input type="number" class="form-control" id="product1-amount" name="{{$ringRvs->id}}" min="1">
                   </div>
                   <div class="shoppingcart">
-                    <button type="submit" name="button_id" value="{{$ringRvs->id}}"><i class="fa-solid fa-cart-shopping addToCart"></i></button>
+                    <button type="submit" name="button_id" value="{{$ringRvs->id}}" class="btn btn-secondary"><i class="fa-solid fa-cart-shopping addToCart"></i></button>
                   </div>
                 </div>
               </div>

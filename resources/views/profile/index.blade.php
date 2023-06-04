@@ -7,7 +7,6 @@
 @section('content')
 <div class="profilePage">
     <header class="profileActions">
-        <a href="/logout" class="btn btn-primary">Uitloggen</a>
         <a href="/profile/settings" class="btn btn-primary">Profiel aanpassen</a>
         <a href="/profile/orders" class="btn btn-primary">Orders</a>
     </header>

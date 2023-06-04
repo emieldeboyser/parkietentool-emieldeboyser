@@ -10,10 +10,13 @@
         
         <div class="welcome-message">
             @if (Auth::guest())
-            <p>Welcome!</p>
+            <p>Welkom!</p>
             @else
-            <p>Welcome, {{ Auth::user()->name }}!</p>
+            <p>Welkom, {{ Auth::user()->name }}!</p>
             @endif
+        </div>
+        <div class="hero-img">
+            <img src="../storage/images/birds.png" alt="wa?">
         </div>
 
     </div>
